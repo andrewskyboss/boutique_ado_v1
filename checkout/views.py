@@ -6,7 +6,6 @@ from django.contrib import messages
 # from django.conf import settings
 
 from .forms import OrderForm
-# from .models import Order, OrderLineItem
 
 # Create your views here.
 
@@ -17,12 +16,12 @@ def checkout(request):
                         "There's nothing in your bag at the moment")
         return redirect(reverse('products'))
 
-    order_form = OrderForm(form_data)
+    order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
+        # 'stripe_public_key': stripe_public_key,
+        # 'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
