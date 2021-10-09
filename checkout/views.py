@@ -12,10 +12,11 @@ from .forms import OrderForm
 
 def checkout(request):
     bag = request.session.get('bag', {})
-        if not bag:
-            messages.error(request,
-                           "There's nothing in your bag at the moment")
-            return redirect(reverse('products'))
+    if not bag:
+        messages.error(request,
+                        "There's nothing in your bag at the moment")
+        return redirect(reverse('products'))
+
     order_form = OrderForm(form_data)
     template = 'checkout/checkout.html'
     context = {
