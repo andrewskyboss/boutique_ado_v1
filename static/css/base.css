@@ -71,8 +71,8 @@ body {
 
 .bg-black {
     background: #000 !important;
-    
 }
+
 .overlay {
 	height: 100%;
 	width: 100%;
@@ -100,6 +100,10 @@ a.category-badge > span.badge:hover {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+input[name='q']::placeholder {
+    color: #aab7c4;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -260,6 +264,7 @@ a.category-badge > span.badge:hover {
     border-color: #dc3545;
     border-radius: 0;
 }
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
